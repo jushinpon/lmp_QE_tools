@@ -1,0 +1,8 @@
+*.dat
+*.out
+*.txt
+*.sout
+*.log
+test*.pl
+*/disturb
+*/original

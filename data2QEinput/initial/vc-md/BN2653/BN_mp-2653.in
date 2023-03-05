@@ -1,0 +1,58 @@
+&CONTROL
+calculation = "vc-md"
+nstep = 200
+etot_conv_thr = 1.0d-5
+forc_conv_thr = 1.0d-4
+disk_io = 'none'
+pseudo_dir = '/opt/QEpot/SSSP_precision_pseudos/'
+tprnfor = .true.
+tstress = .true.
+verbosity = 'high'
+dt = 100
+/
+!controlend
+&SYSTEM
+ntyp = 2
+occupations = 'smearing'
+smearing = 'gaussian'
+degauss =   7.3498618000d-03
+ecutrho =   4.400d+02
+ecutwfc =   8.0d+01 
+ibrav = 0
+nat = 4
+nosym = .TRUE.
+starting_magnetization(1) =   1.0000000000d-01
+starting_magnetization(2) =   1.0000000000d-01
+nspin = 2
+!systemend
+/
+&ELECTRONS
+conv_thr =   2.0000000000d-10
+electron_maxstep = 1000
+mixing_beta =   4.0000000000d-01
+/
+&IONS
+ion_dynamics = "beeman"
+ion_temperature = "rescaling"
+tempw = 300
+/
+&CELL
+!press_conv_thr = 0.1
+cell_dynamics = "pr"
+press = 0
+/
+K_POINTS {automatic}
+19 19 10 0 0 0
+ATOMIC_SPECIES
+B  10.81  B_pbe_v1.01.uspp.F.UPF
+N  14.007  N.oncvpsp.upf
+ATOMIC_POSITIONS {angstrom}
+B -7.46052e-07 1.474518528398 2.11226088802
+B 1.276971142428 0.737258158311 4.22568838802
+N -7.46052e-07 1.474518528398 0.52952348698
+N 1.276971142428 0.737258158311 2.64295098698
+CELL_PARAMETERS {angstrom}
+2.5539392 0 0
+-1.276968803625 2.211776686708 0
+0.000000000000 0.000000000000 4.226855
+!End
