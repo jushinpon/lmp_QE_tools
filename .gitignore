@@ -7,3 +7,4 @@ test*.pl
 */disturb
 */original
 */data
+*/*-data
