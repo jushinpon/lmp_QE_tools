@@ -27,7 +27,7 @@ use List::Util qw(min max);
 use Cwd;
 use POSIX;
 use Parallel::ForkManager;
-use lib '.';#assign pm dir
+use lib '/opt/QElmp_tools/';#assign pm dir
 use elements;#all setting package
 
 ###parameters to set first

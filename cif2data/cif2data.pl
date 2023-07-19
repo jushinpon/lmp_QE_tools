@@ -22,6 +22,6 @@ for my $cif (@ciffiles){
     my $outputdata = "data/$data_name.data";
    # print "$cif: $output\n";
     unlink "./test.lmp";
-    system("atomsk $cif -alignx -unskew $output");
+    system("atomsk $cif -alignx -unskew -wrap $output");
     system("mv $output $outputdata")
 }
