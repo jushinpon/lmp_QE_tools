@@ -33,10 +33,10 @@ for my $file (@md_out){
     my $md_name = `basename $file`;
     $md_name =~ s/\..*//g;
     chomp ($md_path,$md_name);
-    my $natom = `grep "number of atoms/cell" $file|awk '{print \$5}'`;
+    my $natom = `grep -m 1 "number of atoms/cell" $file|awk '{print \$5}'`;
     die "No atom number was found in $file" unless ($natom); 
     $natom =~ s/^\s+|\s+$//g;
-    my $ntype = `grep "number of atomic types" $file|awk '{print \$6}'`;
+    my $ntype = `grep -m 1 "number of atomic types" $file|awk '{print \$6}'`;
     die "No atom type was found in $file" unless ($ntype); 
     $ntype =~ s/^\s+|\s+$//g;
 
